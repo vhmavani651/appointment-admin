@@ -65,7 +65,7 @@ export const DAY_NAMES = [
 
 export const DAY_NAMES_SHORT = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-export const MIN_SLOT_MINUTES = 5;
+export const MIN_SLOT_MINUTES = 30;
 export const MAX_SLOT_MINUTES = 120;
 
 export function apiErrorMessage(err: unknown, fallback: string): string {

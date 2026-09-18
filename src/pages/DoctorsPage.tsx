@@ -132,7 +132,7 @@ export default function DoctorsPage() {
       <ConfirmDialog
         open={deleteTarget !== null}
         title="Delete doctor"
-        message={`Delete ${deleteTarget?.name ?? "this doctor"}? This also removes their availability and cannot be undone.`}
+        message={`Delete ${deleteTarget?.name ?? "this doctor"}? This permanently removes their availability, breaks, and ALL patient appointments (past and upcoming) with them. This cannot be undone.`}
         confirmLabel="Delete"
         loading={deleting}
         onConfirm={confirmDelete}
