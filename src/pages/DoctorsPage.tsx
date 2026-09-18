@@ -179,27 +179,41 @@ export default function DoctorsPage() {
             <Card key={doctor.id} className="p-4">
               <div className="flex flex-wrap items-center justify-between gap-3">
                 {editingId === doctor.id ? (
-                  <div className="flex flex-1 flex-wrap items-center gap-2">
-                    <Input
-                      value={editName}
-                      onChange={(e) => setEditName(e.target.value)}
-                      className="max-w-[220px]"
-                    />
-                    <Input
-                      value={editSpecialization}
-                      onChange={(e) => setEditSpecialization(e.target.value)}
-                      className="max-w-[220px]"
-                    />
-                    <Input
-                      type="number"
-                      min={MIN_SLOT_MINUTES}
-                      max={MAX_SLOT_MINUTES}
-                      step={5}
-                      value={editSlotDuration}
-                      onChange={(e) => setEditSlotDuration(Number(e.target.value))}
-                      className="max-w-[90px]"
-                      title="Slot length (minutes)"
-                    />
+                  <div className="flex flex-1 flex-wrap items-end gap-2">
+                    <div>
+                      <label className="mb-1 block text-[11px] font-medium text-text-muted">
+                        Doctor name
+                      </label>
+                      <Input
+                        value={editName}
+                        onChange={(e) => setEditName(e.target.value)}
+                        className="max-w-[220px]"
+                      />
+                    </div>
+                    <div>
+                      <label className="mb-1 block text-[11px] font-medium text-text-muted">
+                        Specialization
+                      </label>
+                      <Input
+                        value={editSpecialization}
+                        onChange={(e) => setEditSpecialization(e.target.value)}
+                        className="max-w-[220px]"
+                      />
+                    </div>
+                    <div>
+                      <label className="mb-1 block text-[11px] font-medium text-text-muted">
+                        Slot length (min)
+                      </label>
+                      <Input
+                        type="number"
+                        min={MIN_SLOT_MINUTES}
+                        max={MAX_SLOT_MINUTES}
+                        step={5}
+                        value={editSlotDuration}
+                        onChange={(e) => setEditSlotDuration(Number(e.target.value))}
+                        className="max-w-[90px]"
+                      />
+                    </div>
                     <Button className="h-9" onClick={() => saveEdit(doctor.id)} loading={editSaving}>
                       <Check size={14} />
                       Save
